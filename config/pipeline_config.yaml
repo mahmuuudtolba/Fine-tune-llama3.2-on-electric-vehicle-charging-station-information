@@ -1,0 +1,38 @@
+project:
+  name: 'ev_charging_qa'
+  domain: 'electric vehicle charging stations'
+  description: 'QA system for electric vehicle charging domain'
+
+
+data_collection:
+  web_sources:
+    - 'https://pulseenergy.io/blog/electric-vehicle-charging-station-disadvantages'
+    - 'https://www.gny.com/products/electric-vehicle-charging-stations#:~:text=What%20are%20EV%20charging%20stations,%2C%20condos%2C%20and%20apartment%20buildings.'
+    - 'https://chargedevs.com/newswire/heres-what-you-need-to-know-about-ev-charging-station-safety/'
+    - 'https://driveclean.ca.gov/electric-car-charging'
+    - 'https://www.iberdrola.com/sustainability/electric-charging-station'
+    - 'https://en.wikipedia.org/wiki/Charging_station#:~:text=A%20charging%20station%2C%20also%20known,plug%2Din%20hybrid%20vehicles).'
+    - 'https://cityofirvine.org/community-development/electric-vehicle-service-equipment-evse#:~:text=An%20electric%20vehicle%20charging%20station,mobile%20electrical%20units%20such%20as'
+    - 'https://www.advancedenergy.org/news/the-electric-vehicle-evolution#:~:text=The%20First%20Charging%20Stations,we%20are%20used%20to%20today.'
+    - 'https://bacancysystems.com/blog/types-of-ev-chargers'
+    - 'https://bacancysystems.com/blog/ev-charger-for-home'
+    - 'https://bacancysystems.com/blog/different-types-of-ev-charging-speed'
+    - 'https://afdc.energy.gov/fuels/electricity-stations'
+  pdf_sources:
+    - 'data/raw/ChargeNY-Site-Owners-EV-Charge-Stations-Commercial-Best-Practices.pdf'
+    - 'data/raw/EVSE-Signage-Overview.pdf'
+
+processing:
+  model_name: gemini-2.5-pro
+  chunk_size : 500
+  overlap : 100
+
+training:
+  model_name: "meta-llama/Llama-3.2-3B-Instruct"  
+  batch_size: 2
+  epochs: 1  
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
