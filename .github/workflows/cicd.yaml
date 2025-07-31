@@ -52,7 +52,7 @@ jobs:
             context: .
             push: true
             tags: |
-              ${{ secrets.DOCKER_USERNAME }}/QA-electric-vehicle-charging:latest
-              ${{ secrets.DOCKER_USERNAME }}/QA-electric-vehicle-charging:${{ github.sha }}
+              ${{ secrets.DOCKER_USERNAME }}/qa-electric-vehicle-charging:latest
+              ${{ secrets.DOCKER_USERNAME }}/qa-electric-vehicle-charging:${{ github.sha }}
 
             
